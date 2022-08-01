@@ -1,0 +1,248 @@
+:root {
+  --header-height: 50px;
+  --bg-color: #f1f5f9;
+  --line-color: #94a3b8;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Caveat", cursive;
+  background-color: var(--bg-color);
+}
+
+.container {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.line {
+  border-bottom: 1px var(--line-color) solid;
+}
+
+header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  font-family: "Caveat", cursive;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+}
+
+.add-button,
+.submit-dialog {
+  background-color: #34d399;
+}
+.add-button:hover,
+.submit-dialog:hover {
+  background-color: #059669;
+  color: white;
+}
+.destroy-button,
+.close-dialog {
+  background-color: #f87171;
+}
+.destroy-button:hover,
+.close-dialog:hover {
+  color: white;
+  background-color: #dc2626;
+}
+main {
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  column-gap: 3rem;
+  padding-top: 2rem;
+}
+.loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.three-quarter-loading {
+  position: fixed;
+  top: calc(50% - 35px);
+  left: calc((50% - 35px));
+  width: 70px;
+  height: 70px;
+  border: 6px solid #fb5b53;
+  border-top: 6px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.5s linear infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.show-loading {
+  display: block;
+}
+.tabs {
+  display: none;
+}
+.belum-dibaca,
+.sudah-dibaca {
+  flex: 1;
+}
+.belum-dibaca h2,
+.sudah-dibaca h2 {
+  padding-bottom: 1rem;
+  border-bottom: 1px #6b7280 solid;
+}
+.book-list {
+  height: calc(100% - var(--header-height));
+  overflow-y: auto;
+}
+.book {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.id-book {
+  display: none;
+}
+.book-cover {
+  height: 80px;
+  width: auto;
+}
+.book-desc {
+  flex: 1;
+  padding-left: 0.5rem;
+}
+.book-title {
+  font-size: 22px;
+}
+.book > :last-child {
+  margin-right: 8px;
+  align-self: center;
+}
+.icon-check:hover {
+  cursor: pointer;
+  fill: #059669;
+}
+.icon-undo:hover {
+  cursor: pointer;
+  fill: #d97706;
+}
+.icon-trash:hover {
+  cursor: pointer;
+  fill: #dc2626;
+}
+dialog {
+  width: 500px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #334155;
+}
+dialog::backdrop {
+  backdrop-filter: blur(1px);
+}
+.inputText {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+  padding: 4px;
+}
+.inputText label {
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding-bottom: 4px;
+  color: white;
+}
+.inputText input {
+  height: 32px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  color: white;
+  border-radius: 4px;
+  background-color: #0f172a;
+  border: none;
+  outline: none;
+  padding: 6px;
+}
+#cover-input {
+  color: #f8fafc;
+}
+.form-button {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 425px) {
+  main {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+  header {
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  main {
+    display: block;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px var(--line-color) solid;
+  }
+  .tab {
+    font-size: 20px;
+    padding: 0.3rem 1rem;
+    border-radius: 2rem;
+    background-color: #ecfdf5;
+    cursor: pointer;
+  }
+  .tab-active {
+    background-color: #059669;
+    color: white;
+  }
+  .hidden {
+    display: none;
+  }
+  .belum-dibaca h2,
+  .sudah-dibaca h2 {
+    display: none;
+  }
+  dialog {
+    max-width: calc(100% - 4rem);
+  }
+}
+
+@media screen and (max-width: 1056px) {
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

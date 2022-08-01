@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>My BookShelf</title>
+  </head>
+  <body>
+    <header class="container">
+      <h1>My BookShelf</h1>
+      <div class="header-button">
+        <button class="add-button">Tambah Buku</button>
+        <button class="destroy-button">Hapus Buku</button>
+      </div>
+    </header>
+    <main class="container">
+      <div class="loading">
+        <div class="three-quarter-loading"></div>
+      </div>
+      <div class="tabs">
+        <h2 class="tab unread tab-active">Belum dibaca</h2>
+        <h2 class="tab read">Sudah dibaca</h2>
+      </div>
+      <div class="belum-dibaca">
+        <h2>Belum dibaca</h2>
+        <div class="book-list"></div>
+      </div>
+      <div class="sudah-dibaca hidden">
+        <h2>Sudah dibaca</h2>
+        <div class="book-list"></div>
+      </div>
+
+      <!-- Dialog Box -->
+      <dialog id="addBookDialog">
+        <form class="form" method="dialog">
+          <div class="inputText">
+            <label for="judul">Judul</label>
+            <input type="text" id="judul" />
+          </div>
+          <div class="inputText">
+            <label for="author">Penulis</label>
+            <input type="text" id="author" />
+          </div>
+          <div class="inputText">
+            <label for="release">Tahun Terbit</label>
+            <input type="number" id="release" />
+          </div>
+          <input
+            type="file"
+            id="cover-input"
+            accept="image/jpeg, image/jpg, image/png"
+            required
+          />
+          <div class="form-button">
+            <button type="reset" class="close-dialog" value="cancel">
+              Batal
+            </button>
+            <button type="submit" class="submit-dialog">Tambah</button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

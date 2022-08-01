@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "year": 2018,
+    "isComplete": false
+  },
+  {
+    "id": 2,
+    "title": "It Ends With Us",
+    "author": "Coollen Hoover",
+    "year": 2016,
+    "isComplete": false
+  },
+  {
+    "id": 3,
+    "title": "The Subtle Art of Not Giving A F*ck",
+    "author": "Mark Marson",
+    "year": 2018,
+    "isComplete": false
+  },
+  {
+    "id": 4,
+    "title": "The Summer I Turned Pretty",
+    "author": "Jenny Han",
+    "year": 2009,
+    "isComplete": false
+  },
+  {
+    "id": 5,
+    "title": "Don't Believe Everything You Think",
+    "author": "Joseph Nguyem",
+    "year": 2022,
+    "isComplete": false
+  }
+]
